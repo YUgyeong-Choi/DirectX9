@@ -113,6 +113,7 @@ void CYGScene::Release()
 {
 	CObjectManager::Get_Instance()->Delete_ALL();
 	CObjectManager::Get_Instance()->RenderList_Clear();
+	CSoundManager::GetInstance()->StopAllSounds();
 }
 
 void CYGScene::Key_Input()
