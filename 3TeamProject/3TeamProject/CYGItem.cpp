@@ -47,7 +47,7 @@ void CYGItem::OnCollision(CObject* _obj)
 
 void CYGItem::OnCollision()
 {
-	RECT _copyRect = static_cast<CYGPlayer*>(CObjectManager::Get_Instance()->Get_Player())->Get_HitBox();
+	/*RECT _copyRect = static_cast<CYGPlayer*>(CObjectManager::Get_Instance()->Get_Player())->Get_HitBox();
 
 	float fRadius = (50 + m_tInfo.fSizeX) * 0.5f;
 
@@ -63,5 +63,5 @@ void CYGItem::OnCollision()
 
 	if (check) {
 		m_bCanPick = true;
-	}
+	}*/
 }

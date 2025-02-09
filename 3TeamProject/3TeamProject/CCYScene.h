@@ -23,5 +23,8 @@ private:
 	ULONGLONG	m_ullFoodTimeTicker;
 	ULONGLONG	m_ullMonsterTimeTicker;
 	int			m_iPlayerLength;
+
+	// CScene을(를) 통해 상속됨
+	
 };
 

@@ -6,9 +6,7 @@
 #include "CUiManager.h"
 #include "CAbstractFactory.h"
 #include "CCYPlayer.h"
-#include "CCYFood.h"
 #include "CCollisionManager.h"
-#include "CCYMonster.h"
 #include "CSoundManager.h"
 
 
@@ -18,7 +16,7 @@ CCYScene::CCYScene() : m_ullFoodTimeTicker(0), m_iPlayerLength(0), m_ullMonsterT
 
 void CCYScene::Initialize()
 {
-	CObjectManager::Get_Instance()->Add_Object(OBJ_PLAYER, CAbstractFactory<CCYPlayer>::Create(300, 400, 35, 35));
+	//CObjectManager::Get_Instance()->Add_Object(OBJ_PLAYER, CAbstractFactory<CCYPlayer>::Create(300, 400, 35, 35));
 	CUiManager::Get_Instance()->Set_UiType(UI_CY);
 	CSoundManager::GetInstance()->PlayBGM("CY_BGM");
 	srand((unsigned int)time(NULL));
@@ -26,30 +24,14 @@ void CCYScene::Initialize()
 
 int CCYScene::Update()
 {
-	Key_Input();
-	CCollisionManager::Collision_Circle(OBJMGR->Get_ObjList_ByID(OBJ_PLAYER), OBJMGR->Get_ObjList_ByID(OBJ_MISC));
-	CCollisionManager::Collision_Circle(OBJMGR->Get_ObjList_ByID(OBJ_MONSTER), OBJMGR->Get_ObjList_ByID(OBJ_MISC));
-	if (m_ullFoodTimeTicker + rand() % 20 * 200  + 1000 < GetTickCount64())
-	{
-		CObjectManager::Get_Instance()->Add_Object(OBJ_MISC, CAbstractFactory<CCYFood>::Create());
-		m_ullFoodTimeTicker = GetTickCount64();
-	}
-	if (m_ullMonsterTimeTicker + 2000 < GetTickCount64())
-	{
-		CObjectManager::Get_Instance()->Add_Object(OBJ_MONSTER, CAbstractFactory<CCYMonster>::Create());
-		m_ullMonsterTimeTicker = GetTickCount64();
-	}
 
-	CObjectManager::Get_Instance()->Update();
+	Key_Input();
     return 0;
 }
 
 void CCYScene::Late_Update()
 {
-	if (!OBJMGR->Get_ObjList_ByID(OBJ_PLAYER).empty())
-	{
-		m_iPlayerLength = static_cast<CCYPlayer*>(OBJMGR->Get_ObjList_ByID(OBJ_PLAYER).front())->Get_WormLength();
-	}
+	
 	//CCollisionManager::Collision_Circle(OBJMGR->Get_ObjList_ByID(OBJ_PLAYER), OBJMGR->Get_ObjList_ByID(OBJ_CYTAIL));
 	//CCollisionManager::Collision_Circle(OBJMGR->Get_ObjList_ByID(OBJ_MONSTER), OBJMGR->Get_ObjList_ByID(OBJ_CYTAIL));
 	CObjectManager::Get_Instance()->Late_Update();
@@ -101,11 +83,6 @@ void CCYScene::Key_Input()
 		g_bDevmode = !g_bDevmode;
 	}
 
-	if (CKeyManager::Get_Instance()->Key_Down('1'))
-	{
-		CObjectManager::Get_Instance()->Add_Object(OBJ_MONSTER, CAbstractFactory<CCYMonster>::Create());
-
-	}
 
 	if (CKeyManager::Get_Instance()->Key_Down(VK_F9)) {
 		CSceneManager::Get_Instance()->Set_Scene(SC_MENU);
@@ -119,3 +96,5 @@ void CCYScene::Create_MapObj()
 void CCYScene::Offset()
 {
 }
+
+

@@ -152,8 +152,6 @@
     <ClInclude Include="CAbstractFactory.h" />
     <ClInclude Include="CBitManager.h" />
     <ClInclude Include="CCollisionManager.h" />
-    <ClInclude Include="CCYHead.h" />
-    <ClInclude Include="CCYMonster.h" />
     <ClInclude Include="CCYObject.h" />
     <ClInclude Include="CCYPlayer.h" />
     <ClInclude Include="CCYScene.h" />
@@ -161,7 +159,6 @@
     <ClInclude Include="CDWObject.h" />
     <ClInclude Include="CDWPlayer.h" />
     <ClInclude Include="CDWScene.h" />
-    <ClInclude Include="CCYFood.h" />
     <ClInclude Include="CFruit.h" />
     <ClInclude Include="CJWScene.h" />
     <ClInclude Include="CKeyManager.h" />
@@ -177,9 +174,7 @@
     <ClInclude Include="CScrollManager.h" />
     <ClInclude Include="CSoundManager.h" />
     <ClInclude Include="CUiManager.h" />
-    <ClInclude Include="CYGBox.h" />
     <ClInclude Include="CYGBullet.h" />
-    <ClInclude Include="CYGBulletBox.h" />
     <ClInclude Include="CYGBulletItem.h" />
     <ClInclude Include="CYGGunItem.h" />
     <ClInclude Include="CYGItem.h" />
@@ -197,8 +192,6 @@
     <ClCompile Include="3TeamProject.cpp" />
     <ClCompile Include="CBitManager.cpp" />
     <ClCompile Include="CCollisionManager.cpp" />
-    <ClCompile Include="CCYHead.cpp" />
-    <ClCompile Include="CCYMonster.cpp" />
     <ClCompile Include="CCYObject.cpp" />
     <ClCompile Include="CCYPlayer.cpp" />
     <ClCompile Include="CCYScene.cpp" />
@@ -206,7 +199,6 @@
     <ClCompile Include="CDWObject.cpp" />
     <ClCompile Include="CDWPlayer.cpp" />
     <ClCompile Include="CDWScene.cpp" />
-    <ClCompile Include="CCYFood.cpp" />
     <ClCompile Include="CFruit.cpp" />
     <ClCompile Include="CJWScene.cpp" />
     <ClCompile Include="CKeyManager.cpp" />
@@ -221,9 +213,7 @@
     <ClCompile Include="CScrollManager.cpp" />
     <ClCompile Include="CSoundManager.cpp" />
     <ClCompile Include="CUiManager.cpp" />
-    <ClCompile Include="CYGBox.cpp" />
     <ClCompile Include="CYGBullet.cpp" />
-    <ClCompile Include="CYGBulletBox.cpp" />
     <ClCompile Include="CYGBulletItem.cpp" />
     <ClCompile Include="CYGGunItem.cpp" />
     <ClCompile Include="CYGItem.cpp" />

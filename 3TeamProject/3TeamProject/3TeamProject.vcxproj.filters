@@ -76,9 +76,6 @@
     <Filter Include="02_Object\02_CY\00_CYPlayer">
       <UniqueIdentifier>{f63b5672-6c31-411c-81cc-4ea6c3a8b807}</UniqueIdentifier>
     </Filter>
-    <Filter Include="02_Object\02_CY\01_CYMonster">
-      <UniqueIdentifier>{0dfee0d1-8ffd-44d0-a92d-cbd557cdc769}</UniqueIdentifier>
-    </Filter>
     <Filter Include="02_Object\02_CY\02_CYTail">
       <UniqueIdentifier>{ad80ce49-eb7c-45c9-b519-5ab264e4060c}</UniqueIdentifier>
     </Filter>
@@ -183,9 +180,6 @@
     <ClInclude Include="CCYPlayer.h">
       <Filter>02_Object\02_CY\00_CYPlayer</Filter>
     </ClInclude>
-    <ClInclude Include="CCYMonster.h">
-      <Filter>02_Object\02_CY\01_CYMonster</Filter>
-    </ClInclude>
     <ClInclude Include="CCYTail.h">
       <Filter>02_Object\02_CY\02_CYTail</Filter>
     </ClInclude>
@@ -198,20 +192,11 @@
     <ClInclude Include="CObjPool.h">
       <Filter>02_Object\04_JW</Filter>
     </ClInclude>
-    <ClInclude Include="CCYSegment.h">
-      <Filter>02_Object\02_CY\00. CCY</Filter>
-    </ClInclude>
-    <ClInclude Include="CCYHead.h">
-      <Filter>02_Object\02_CY</Filter>
-    </ClInclude>
     <ClInclude Include="CDWObject.h">
       <Filter>02_Object\03_DW</Filter>
     </ClInclude>
     <ClInclude Include="CDWPlayer.h">
       <Filter>02_Object\03_DW</Filter>
-    </ClInclude>
-    <ClInclude Include="CCYFood.h">
-      <Filter>02_Object\02_CY</Filter>
     </ClInclude>
     <ClInclude Include="CRoad.h">
       <Filter>02_Object\03_DW</Filter>
@@ -221,9 +206,6 @@
     </ClInclude>
     <ClInclude Include="CYGBullet.h">
       <Filter>02_Object\01_YG</Filter>
-    </ClInclude>
-    <ClInclude Include="CYGBox.h">
-      <Filter>02_Object\01_YG\00_MapObj</Filter>
     </ClInclude>
     <ClInclude Include="CYGItem.h">
       <Filter>02_Object\01_YG\01_Item</Filter>
@@ -236,9 +218,6 @@
     </ClInclude>
     <ClInclude Include="CYGMonster.h">
       <Filter>02_Object\01_YG\02_Monster</Filter>
-    </ClInclude>
-    <ClInclude Include="CYGBulletBox.h">
-      <Filter>02_Object\01_YG\00_MapObj</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -302,9 +281,6 @@
     <ClCompile Include="CCYPlayer.cpp">
       <Filter>02_Object\02_CY\00_CYPlayer</Filter>
     </ClCompile>
-    <ClCompile Include="CCYMonster.cpp">
-      <Filter>02_Object\02_CY\01_CYMonster</Filter>
-    </ClCompile>
     <ClCompile Include="CCYTail.cpp">
       <Filter>02_Object\02_CY\02_CYTail</Filter>
     </ClCompile>
@@ -314,20 +290,11 @@
     <ClCompile Include="CFruit.cpp">
       <Filter>02_Object\04_JW</Filter>
     </ClCompile>
-    <ClCompile Include="CCYSegment.cpp">
-      <Filter>02_Object\02_CY\00. CCY</Filter>
-    </ClCompile>
-    <ClCompile Include="CCYHead.cpp">
-      <Filter>02_Object\02_CY</Filter>
-    </ClCompile>
     <ClCompile Include="CDWObject.cpp">
       <Filter>02_Object\03_DW</Filter>
     </ClCompile>
     <ClCompile Include="CDWPlayer.cpp">
       <Filter>02_Object\03_DW</Filter>
-    </ClCompile>
-    <ClCompile Include="CCYFood.cpp">
-      <Filter>02_Object\02_CY</Filter>
     </ClCompile>
     <ClCompile Include="CRoad.cpp">
       <Filter>02_Object\03_DW</Filter>
@@ -337,9 +304,6 @@
     </ClCompile>
     <ClCompile Include="CYGBullet.cpp">
       <Filter>02_Object\01_YG</Filter>
-    </ClCompile>
-    <ClCompile Include="CYGBox.cpp">
-      <Filter>02_Object\01_YG\00_MapObj</Filter>
     </ClCompile>
     <ClCompile Include="CYGItem.cpp">
       <Filter>02_Object\01_YG\01_Item</Filter>
@@ -355,9 +319,6 @@
     </ClCompile>
     <ClCompile Include="CYGMonster.cpp">
       <Filter>02_Object\01_YG\02_Monster</Filter>
-    </ClCompile>
-    <ClCompile Include="CYGBulletBox.cpp">
-      <Filter>02_Object\01_YG\00_MapObj</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>

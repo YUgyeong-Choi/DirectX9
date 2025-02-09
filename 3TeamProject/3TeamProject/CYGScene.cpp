@@ -6,7 +6,6 @@
 #include "CAbstractFactory.h"
 #include "CUiManager.h"
 #include "CYGPlayer.h"
-#include "CYGBox.h"
 #include "CScrollManager.h"
 #include "CYGMonster.h"
 #include "CSoundManager.h"
@@ -17,28 +16,22 @@ CYGScene::CYGScene():m_bRound1Start(false), m_iMoveX(0)
 
 void CYGScene::Initialize()
 {
-	CSoundManager::GetInstance()->PlayBGM("YGSurviv_BGM");
 	CScrollManager::Get_Instance()->Set_ScrollLock(4000, 4000);
 	CUiManager::Get_Instance()->Set_UiType(UI_END);
 
 	Create_MapObj();
-	m_iMoveX = 0;
 }
 
 int CYGScene::Update()
 {
-	CObjectManager::Get_Instance()->Update();
-	if (!m_bRound1Start) {
-		m_iMoveX += 20;
-		if (m_iMoveX == 1600) {
-			m_bRound1Start = true;
-			m_iMoveX = 0;
+	if (CKeyManager::Get_Instance()->Key_Down(VK_F9)) {
+		CSceneManager::Get_Instance()->Set_Scene(SC_MENU);
+	}
+
+	CObjectManager::Get_Instance()->Update();		
 			CObjectManager::Get_Instance()->Add_Object(OBJ_PLAYER, CAbstractFactory<CYGPlayer>::Create(80, 300, 50, 50));
 			CUiManager::Get_Instance()->Set_UiType(UI_YG);
-			CObjectManager::Get_Instance()->Add_Object(OBJ_MAP, CAbstractFactory<CYGBox>::Create(200, 300, 70, 70));
-		}
-	}
-	Key_Input();
+			
     return 0;
 }
 
@@ -49,7 +42,7 @@ void CYGScene::Late_Update()
 
 void CYGScene::Render(HDC hDC)
 {
-	COLORREF color = RGB(128, 175, 73);
+	COLORREF color = RGB(255, 255, 255);
 
 	HBRUSH hBrush = CreateSolidBrush(color);
 	HPEN hPen = CreatePen(PS_NULL, 0, RGB(0, 0, 0));
@@ -66,40 +59,11 @@ void CYGScene::Render(HDC hDC)
 	CObjectManager::Get_Instance()->Render(hDC);
 	CUiManager::Get_Instance()->Render(hDC);
 
-	if (!m_bRound1Start) {
-		ColorRect(hDC, 0, 0, 800, 600, 0, 0, 0, 0);
-
-		TCHAR roundText[64];
-		_stprintf_s(roundText, _T("GameStart"));
-
-		HFONT hFont = CreateFont(
-			100,                 
-			0,                  
-			0,                  
-			40,                 
-			FW_BOLD,            
-			TRUE,               
-			FALSE,              
-			FALSE,              
-			DEFAULT_CHARSET,    
-			OUT_DEFAULT_PRECIS, 
-			CLIP_DEFAULT_PRECIS,
-			DEFAULT_QUALITY,    
-			DEFAULT_PITCH | FF_SWISS  ,
-			NULL
-		);
-
-		HFONT hOldFont = (HFONT)SelectObject(hDC, hFont);
-
-		RECT rect2 = { -800+ m_iMoveX, 0, 0+ m_iMoveX, 600 };
-		DrawText(hDC, roundText, _tcslen(roundText), &rect2, DT_CENTER | DT_SINGLELINE | DT_VCENTER);
-
-		SelectObject(hDC, hOldFont);
-		DeleteObject(hFont);
-	}
+	
 
 
-	if (g_bDevmode) {
+	if (g_bDevmode)
+	{
 		TCHAR szWhoScene[64];
 		_stprintf_s(szWhoScene, _T("À¯°æ"));
 		SetTextColor(hDC, RGB(0, 0, 0));

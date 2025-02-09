@@ -3,10 +3,8 @@
 #include "CScrollManager.h"
 #include "CObjectManager.h"
 #include "CYGPlayer.h"
-#include "CYGBox.h"
 #include "CCollisionManager.h"
 #include "CYGMonster.h"
-#include "CYGBox.h"
 #include "CSoundManager.h"
 
 CYGBullet::CYGBullet():m_iReMoveTick(0), m_bDead(false)
@@ -65,7 +63,7 @@ void CYGBullet::OnCollision(CObject* _obj)
 
 void CYGBullet::OnCollision()
 {
-	CYGPlayer* _copyPlayer = dynamic_cast<CYGPlayer*>(CObjectManager::Get_Instance()->Get_ObjList_ByID(OBJ_PLAYER).back());
+	/*CYGPlayer* _copyPlayer = dynamic_cast<CYGPlayer*>(CObjectManager::Get_Instance()->Get_ObjList_ByID(OBJ_PLAYER).back());
 	if (CCollisionManager::Check_Circle(m_tHitRect, _copyPlayer->Get_HitBox())) {
 		m_bDead = true;
 		_copyPlayer->Set_Hp(-5);
@@ -89,6 +87,6 @@ void CYGBullet::OnCollision()
 			m_bDead = true;
 			_copyMapObj->OnCollision(this);
 		}
-	}
+	}*/
 
 }

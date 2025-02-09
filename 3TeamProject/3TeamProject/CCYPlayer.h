@@ -1,31 +1,18 @@
 #pragma once
-#include "CCYHead.h"
-class CCYPlayer :  public CCYHead
+
+#include "CObject.h"
+class CCYPlayer : public CObject
 {
 public:
 	CCYPlayer();
 	virtual ~CCYPlayer();
 public:
-	void Initialize() override;
-	int Update() override;
-	void Late_Update() override;
-	void Render(HDC hDC) override;
-	void Release() override;
-	void OnCollision(CObject* _obj) override;
+	void Initialize() ;
+	int Update() ;
+	void Late_Update() ;
+	void Render(HDC hDC) ;
+	void Release() ;
 
-public:
-	float Get_WormSize() { return m_fWormSize; }
 
-private:
-	void Key_Input();
-	void Increase_TailSegment();
-
-private:
-	float		m_fWormSize;
-	ULONGLONG	m_ullTailDeleteTicker;
-	bool		m_bDashing;
-	int			m_iDeadTimeFrame;
-
-	
 };
 

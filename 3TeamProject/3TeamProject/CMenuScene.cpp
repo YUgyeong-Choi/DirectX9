@@ -39,8 +39,8 @@ void CMenuScene::Render(HDC hDC)
     HFONT hFont1 = CreateFont(50, 0, 0, 0, FW_DONTCARE, FALSE, FALSE, FALSE, DEFAULT_CHARSET, OUT_OUTLINE_PRECIS, CLIP_DEFAULT_PRECIS, NONANTIALIASED_QUALITY, VARIABLE_PITCH, TEXT("Arial"));
     HFONT hOldFont = (HFONT)SelectObject(hDC, hFont1);
     TCHAR szLength[64];
-    _stprintf_s(szLength, _T("3 TeamProject"));
-    TextOut(hDC, 250, 100, szLength, _tcslen(szLength));
+    _stprintf_s(szLength, _T("홍동완 복습"));
+    TextOut(hDC, 300, 100, szLength, _tcslen(szLength));
     SelectObject(hDC, hOldFont);
     DeleteObject(hFont1);
 
@@ -63,19 +63,19 @@ void CMenuScene::Render(HDC hDC)
     SetBkMode(hDC, TRANSPARENT); //글자 배경 투명
 
     TCHAR whoMake[64];
-    _stprintf_s(whoMake, _T("유경"));
+    _stprintf_s(whoMake, _T("에이스타"));
     RECT rect = { 20, 410, 180, 450 };
     DrawText(hDC, whoMake, _tcslen(whoMake), &rect, DT_CENTER | DT_SINGLELINE | DT_VCENTER);
 
-    _stprintf_s(whoMake, _T("채영"));
+    _stprintf_s(whoMake, _T("카메라"));
     rect = { 220, 410, 380, 450 };
     DrawText(hDC, whoMake, _tcslen(whoMake), &rect, DT_CENTER | DT_SINGLELINE | DT_VCENTER);
 
-    _stprintf_s(whoMake, _T("동완"));
+    _stprintf_s(whoMake, _T("미정1"));
     rect = { 420, 410, 580, 450 };
     DrawText(hDC, whoMake, _tcslen(whoMake), &rect, DT_CENTER | DT_SINGLELINE | DT_VCENTER);
 
-    _stprintf_s(whoMake, _T("장원"));
+    _stprintf_s(whoMake, _T("미정2"));
     rect = { 620, 410, 780, 450 };
     DrawText(hDC, whoMake, _tcslen(whoMake), &rect, DT_CENTER | DT_SINGLELINE | DT_VCENTER);
 
@@ -98,6 +98,8 @@ void CMenuScene::Release()
 
 void CMenuScene::Key_Input()
 {
+
+
     if (CKeyManager::Get_Instance()->Key_Down(VK_RIGHT)) {
         m_iIndex++;
         if (m_iIndex > 3) {
